@@ -176,47 +176,7 @@ end
 copygraphics(gcf)
 
 %% Results:
-% using kpl @ 1% residual:
 % 
-% Hth83: MS Kpl = 0.447; HP Kpl = 0.251 ± 0.075
-% PC3: MS Kpl = 0.138; HP Kpl = 0.089 ± 0.020
-% LnCap: MS Kpl = 0.583; HP Kpl = 0.516 ± 0.304
-% Regression Slope = 0.898 ± 0.317
-% Regression Slope Confidence Interval = [0.191, 1.605], delta=1.414
-% p = 0.018
-% R^2 = 0.444
-%
-% using min sos=sqrt((kecps.^2)+(kecls.^2)+(klps.^2));
-% "SOS1"
-% Hth83: MS Kpl = 0.506; HP Kpl = 0.932 ± 0.093
-% PC3: MS Kpl = 0.141; HP Kpl = 0.201 ± 0.040
-% LnCap: MS Kpl = 0.594; HP Kpl = 0.806 ± 0.287
-% Regression Slope = 1.531 ± 0.339
-% Regression Slope Confidence Interval = [0.776, 2.286], delta=1.51
-% p = 0.001
-% R^2 = 0.671
-%
-% using min sos=sqrt((kecps.^2)+(kecls.^2)+(klps.^2)+(kplvec.^2));
-% "SOS2"
-% Hth83: MS Kpl = 0.506; HP Kpl = 0.442 ± 0.151
-% PC3: MS Kpl = 0.141; HP Kpl = 0.176 ± 0.018
-% LnCap: MS Kpl = 0.594; HP Kpl = 0.754 ± 0.321
-% Regression Slope = 1.115 ± 0.363
-% Regression Slope Confidence Interval = [0.306, 1.923], delta=1.617
-% p = 0.012
-% R^2 = 0.485
-%
-% using min sos=sqrt(((kecps/0.2).^2)+((kecls/0.2).^2)+((klps).^2)+((kplvec/1.5).^2));
-% "SOS3"
-% Hth83: MS Kpl = 0.506; HP Kpl = 0.607 ± 0.152
-% PC3: MS Kpl = 0.141; HP Kpl = 0.255 ± 0.027
-% LnCap: MS Kpl = 0.594; HP Kpl = 0.806 ± 0.287
-% Regression Slope = 1.141 ± 0.307
-% Regression Slope Confidence Interval = [0.457, 1.826], delta=1.369
-% p = 0.004
-% R^2 = 0.580 
-% 
-% Reran allowing kpl values up to 1.5
 % Hth83: MS Kpl = 0.447; HP Kpl = 0.603 ± 0.140
 % PC3: MS Kpl = 0.138; HP Kpl = 0.252 ± 0.024
 % LnCap: MS Kpl = 0.583; HP Kpl = 0.934 ± 0.432
@@ -224,3 +184,4 @@ copygraphics(gcf)
 % Regression Slope Confidence Interval = [0.486, 2.461], delta=1.975
 % p = 0.008
 % R^2 = 0.526 
+
