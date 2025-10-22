@@ -168,7 +168,7 @@ fdv.verbose=0;
 
 hppkopts=optimset('display','off');
 
-kplvec=logspace(-3,0.3979,50);
+kplvec=logspace(log10(0.01),log10(1.5),30);
 residvec=zeros(1,length(kplvec));
 fitsvec =zeros(length(kplvec),length(fdv.fitvars));
 

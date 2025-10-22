@@ -161,8 +161,8 @@ if strcmp(refit,'Yes')
     nruns=5000; % per kpl value - use 5000
     totruns=oldruns+nruns;
     
-    nkpls=38; % close to same kpl resolution as above
-    kplvec=logspace(-3,0,nkpls); % from 0.001 to 1
+    nkpls=30; % close to same kpl resolution as above
+    kplvec=logspace(log10(0.01),log10(1.5),nkpls); 
    
     for gn=1:NG
         for dn=1:ND
