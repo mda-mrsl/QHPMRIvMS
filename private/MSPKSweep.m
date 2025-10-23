@@ -1,4 +1,4 @@
-function [telapsed] = MSPK4v2(celsel,MassSpecData)
+function [telapsed] = MSPKSweep(celsel,MassSpecData)
 
 saveout=1;
 verbose=0;
