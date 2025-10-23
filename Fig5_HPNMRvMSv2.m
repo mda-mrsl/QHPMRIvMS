@@ -1,7 +1,7 @@
 % Get kpl values and create figure to show relationship between
 % values derived from ICMS and from NMR
 clear
-savefig=0;
+savefig=1;
 
 msfns={fullfile('data','MSPKSweepHth83.mat'),...
     fullfile('data','MSPKSweepPC3.mat'),...
@@ -114,6 +114,8 @@ for ii=1:3
         Group(1).Name,tmpmskpl, mean(tmphpkpl), std(tmphpkpl));
 end
 
+%% Plot results
+
 %What happens if we exclude LnCap run 1 as outlier, given ?
 %mskpls=mskpls([1:8 10:12]);
 %hpkpls=hpkpls([1:8 10:12]);
@@ -159,23 +161,23 @@ if lrce(1)>0
 else
     tmps="-";
 end
-text(0.25,0.3,sprintf('y = %5.3fx %s %5.3f',lrce(2),tmps,abs(lrce(1))));
+text(0.25,0.65,sprintf('y = %5.3fx %s %5.3f',lrce(2),tmps,abs(lrce(1))));
 %text(0.25,0.1,sprintf('Pearson \\rho = %5.3f',rho(1,2)));
-text(0.3,0.8,sprintf('R^2 = %5.3f',R2));
+text(0.5,1.1,sprintf('R^2 = %5.3f',R2));
 %fprintf('Pearson rho = %5.3f (P=%5.3f)\n',rho(1,2),pcor(1,2));
 
 %ofn='TestNorms_SOS3.png';
 tmp=datetime('today');
 ofn=sprintf('%s.%d%02d%02d',mfilename,tmp.Year,tmp.Month,tmp.Day);
 if savefig
-    print(ofn,'-depsc');
+    print([ofn '.eps'],'-depsc');
     exportgraphics(gcf,[ofn '.png']);
 end
 
 %Copy figure to clipboard
 copygraphics(gcf)
 
-%% Results:
+% Results:
 % 
 % using kpl @ residual reduced to within 1% of min (from max):
 % and min sos=sqrt(((kecps/0.2).^2)+((kecls/0.2).^2)+((klps).^2)+((kplvec/1.5).^2));
