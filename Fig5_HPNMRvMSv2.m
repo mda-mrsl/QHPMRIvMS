@@ -177,11 +177,13 @@ copygraphics(gcf)
 
 %% Results:
 % 
-% Hth83: MS Kpl = 0.447; HP Kpl = 0.603 ± 0.140
-% PC3: MS Kpl = 0.138; HP Kpl = 0.252 ± 0.024
-% LnCap: MS Kpl = 0.583; HP Kpl = 0.934 ± 0.432
-% Regression Slope = 1.475 ± 0.443
-% Regression Slope Confidence Interval = [0.486, 2.461], delta=1.975
-% p = 0.008
-% R^2 = 0.526 
-
+% using kpl @ residual reduced to within 1% of min (from max):
+% and min sos=sqrt(((kecps/0.2).^2)+((kecls/0.2).^2)+((klps).^2)+((kplvec/1.5).^2));
+%
+% Hth83: MS Kpl = 0.559; HP Kpl = 0.603 ± 0.140
+% PC3: MS Kpl = 0.158; HP Kpl = 0.252 ± 0.024
+% LnCap: MS Kpl = 0.890; HP Kpl = 0.934 ± 0.432
+% Regression Slope = 0.932 ± 0.432
+% Regression Slope Confidence Interval = [0.343, 1.521], delta=1.178
+% p = 0.005
+% R^2 = 0.554 
