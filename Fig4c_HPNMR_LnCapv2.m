@@ -118,8 +118,8 @@ for gn=1:NGrp
         %Save to files
         %set(gcf,'position',[0 60 600 600]);
         set(gcf,'position',[2000 -200 800 800])
-        print(sprintf('Fig4-NMR-%s',Group.Name),'-depsc')
-        exportgraphics(gcf,sprintf('Fig4-NMR-%s.png',Group.Name))
+        %print(sprintf('Fig4-NMR-%s',Group.Name),'-depsc')
+        exportgraphics(gcf,sprintf('Fig4c-NMR-%s.png',Group.Name),'Resolution',352); % default res 150
         
         %Copy to clipboard:
         copygraphics(gcf)

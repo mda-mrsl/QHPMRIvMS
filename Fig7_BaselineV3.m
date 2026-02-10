@@ -237,10 +237,6 @@ end
 
 %% Fig 7c1 - baseline three-compartment model.
 
-% load('230427_ModelC003Av4.mat');
-% kplveclen=length(kplvec);
-
-%load('S3PC3kplsweep5000.mat'); 
 load(pk3pcprefn,'fdvc','kplcfits','kplcresids','kplvec');
 
 kplcmask=kplbmask;
