@@ -1,4 +1,4 @@
-function [telapsed] = MSPKSweep(celsel,MassSpecData)
+function [telapsed] = MSPKSweep2(celsel,MassSpecData)
 
 saveout=1;
 verbose=0;
@@ -16,7 +16,7 @@ taxis=MassSpecData.Hth83_20200305.Parental.texp; % [0 5 15 30 45 60]
 switch celsel
     case 1 % Hth83
         name='PK Analysis of Mass Spec - Hth83 ATC'
-        ofn='MSPKSweepHth83';
+        ofn='MSPKSweepHth83v2';
 
         % Mass spec values from cells:
         Pm0 = (MassSpecData.Hth83_20200305.Parental.Pm0 + MassSpecData.Hth83_20200305.Run2.Pm0 + MassSpecData.Hth83_20200305.Run3_20190207.Pm0)/3;
@@ -52,7 +52,7 @@ switch celsel
     
     case 2 %PC3
         name='PK Analysis of Mass Spec - PC3 Prostate'
-        ofn='MSPKSweepPC3';
+        ofn='MSPKSweepPC3v2';
 
         % Mass spec values from cells:
         Pm0 = MassSpecData.PC3_20200305.Average.Pm0;
@@ -93,7 +93,7 @@ switch celsel
 
     case 3 %LnCap
         name='PK Analysis of Mass Spec - LnCap Prostate'
-        ofn='MSPKSweepLnCap';
+        ofn='MSPKSweepLnCapv2';
 
         % Mass spec values from cells:
         Pm0 = MassSpecData.LnCap_20200305.Average.Pm0;
@@ -143,9 +143,9 @@ eps=1e-100;
 vef=vmedia/(vmedia+vcells);
 
 fdv.fitvars={'klp'  'kecp' 'kecl' 'Pe0'};
-LB=         [ 0      eps    eps    0];
-UB=         [ Inf    1.0    1.0    Inf];
-UG=         [ 0.2    0.1    0.1    5*MPm3(6)];
+LB=         [ 0      0      0      0];
+UB=         [ Inf    Inf    Inf    Inf];
+UG=         [ 1.0    1.0    1.0    5*MPm3(6)];
 
 fdv.knowns=  {'kve','vb', 'vef', 'Gam1','Gam2','tdel','Le0','Pi0','Li0','kpx','klx','VIFScale','kpl'};
 fdv.knownvals=[0.00, eps,  vef,   2.8,   4.5,   10,    0,    0,    0,    0,    0,    1,         0];
