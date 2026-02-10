@@ -1,4 +1,4 @@
-function [telapsed] = MSPKSweep2(celsel,MassSpecData)
+function [telapsed] = MSPKSweep(celsel,MassSpecData)
 
 saveout=1;
 verbose=0;
@@ -207,4 +207,5 @@ telapsed=toc(tstart);
 
 if saveout
     save(fullfile('data',ofn),'fdv','bestfits','kplvec','residvec','fitsvec','LB','UB')
+
 end
